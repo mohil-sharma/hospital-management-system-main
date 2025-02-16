@@ -1,5 +1,3 @@
-Welcome to Mohil Sharma’s Project
-
 Project Info
 
 This project is built with modern web technologies and can be edited, managed, and deployed using multiple methods.
