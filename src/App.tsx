@@ -5,28 +5,13 @@ import { ThemeProvider } from "next-themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Book from "./pages/Book";
+import Portal from "./pages/Portal";
 import NotFound from "./pages/NotFound";
 import { useEffect, useState } from "react";
 
 const queryClient = new QueryClient();
 
-<<<<<<< Updated upstream
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-=======
 const App = () => {
   const [mounted, setMounted] = useState(false);
 
@@ -58,6 +43,5 @@ const App = () => {
     </QueryClientProvider>
   );
 };
->>>>>>> Stashed changes
 
 export default App;
