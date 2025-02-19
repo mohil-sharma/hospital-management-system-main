@@ -86,24 +86,24 @@ const Book = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col dark:bg-background">
       <Navbar />
       <main className="flex-1">
         <div className="bg-gradient-soft w-full px-16 py-28 overflow-hidden max-md:max-w-full max-md:px-5">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold mb-6">
+            <h1 className="text-4xl font-bold mb-6 text-foreground dark:text-white">
               Book Your Appointment
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
                 {" "}
                 Today
               </span>
             </h1>
-            <p className="text-lg mb-12">
+            <p className="text-lg mb-12 text-foreground/90 dark:text-gray-300">
               Take the first step towards better health by scheduling your
               appointment with our medical professionals.
             </p>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
@@ -114,11 +114,11 @@ const Book = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel className="text-foreground dark:text-white">Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder="John Doe" {...field} className="dark:bg-gray-800 dark:text-white dark:border-gray-700" />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="dark:text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -128,15 +128,16 @@ const Book = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel className="text-foreground dark:text-white">Email</FormLabel>
                         <FormControl>
                           <Input
                             type="email"
                             placeholder="john@example.com"
                             {...field}
+                            className="dark:bg-gray-800 dark:text-white dark:border-gray-700"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="dark:text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -146,15 +147,16 @@ const Book = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
+                        <FormLabel className="text-foreground dark:text-white">Phone Number</FormLabel>
                         <FormControl>
                           <Input
                             type="tel"
                             placeholder="(555) 555-5555"
                             {...field}
+                            className="dark:bg-gray-800 dark:text-white dark:border-gray-700"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="dark:text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -165,25 +167,25 @@ const Book = () => {
                       name="doctor"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Select Doctor</FormLabel>
+                          <FormLabel className="text-foreground dark:text-white">Select Doctor</FormLabel>
                           <Select
                             onValueChange={field.onChange}
                             defaultValue={field.value}
                           >
                             <FormControl>
-                              <SelectTrigger>
+                              <SelectTrigger className="dark:bg-gray-800 dark:text-white dark:border-gray-700">
                                 <SelectValue placeholder="Select a doctor" />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent>
+                            <SelectContent className="dark:bg-gray-800">
                               {sampleDoctors.map((doctor) => (
-                                <SelectItem key={doctor.id} value={doctor.id}>
+                                <SelectItem key={doctor.id} value={doctor.id} className="dark:text-white dark:focus:bg-gray-700">
                                   Dr. {doctor.name} - {doctor.specialty}
                                 </SelectItem>
                               ))}
                             </SelectContent>
                           </Select>
-                          <FormMessage />
+                          <FormMessage className="dark:text-red-400" />
                         </FormItem>
                       )}
                     />
@@ -193,7 +195,7 @@ const Book = () => {
                       name="date"
                       render={({ field }) => (
                         <FormItem className="flex flex-col">
-                          <FormLabel>Preferred Date</FormLabel>
+                          <FormLabel className="text-foreground dark:text-white">Preferred Date</FormLabel>
                           <Popover>
                             <PopoverTrigger asChild>
                               <FormControl>
@@ -226,7 +228,7 @@ const Book = () => {
                               />
                             </PopoverContent>
                           </Popover>
-                          <FormMessage />
+                          <FormMessage className="dark:text-red-400" />
                         </FormItem>
                       )}
                     />
@@ -237,25 +239,25 @@ const Book = () => {
                     name="time"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Preferred Time</FormLabel>
+                        <FormLabel className="text-foreground dark:text-white">Preferred Time</FormLabel>
                         <Select
                           onValueChange={field.onChange}
                           defaultValue={field.value}
                         >
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="dark:bg-gray-800 dark:text-white dark:border-gray-700">
                               <SelectValue placeholder="Select preferred time" />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent>
+                          <SelectContent className="dark:bg-gray-800">
                             {timeSlots.map((time) => (
-                              <SelectItem key={time} value={time}>
+                              <SelectItem key={time} value={time} className="dark:text-white dark:focus:bg-gray-700">
                                 {time}
                               </SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
-                        <FormMessage />
+                        <FormMessage className="dark:text-red-400" />
                       </FormItem>
                     )}
                   />
@@ -265,14 +267,15 @@ const Book = () => {
                     name="description"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Reason for Visit</FormLabel>
+                        <FormLabel className="text-foreground dark:text-white">Reason for Visit</FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Please describe your symptoms or reason for visit"
                             {...field}
+                            className="dark:bg-gray-800 dark:text-white dark:border-gray-700"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="dark:text-red-400" />
                       </FormItem>
                     )}
                   />
