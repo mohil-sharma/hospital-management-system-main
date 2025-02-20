@@ -99,9 +99,9 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
 
 @keyframes fadeInUp {
@@ -132,8 +132,9 @@
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
+
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
@@ -186,22 +187,19 @@
 
 .bg-gradient-soft {
   background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(249, 246, 255, 1) 25%,
-    rgba(243, 237, 255, 1) 50%,
-    rgba(237, 233, 254, 1) 75%,
-    rgba(243, 237, 255, 1) 100%
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
   );
+  backdrop-filter: blur(10px);
 }
+
 
 .dark .bg-gradient-soft {
   background: linear-gradient(
-    45deg,
-    rgba(26, 31, 44, 1) 0%,
-    rgba(28, 33, 46, 1) 25%,
-    rgba(30, 35, 48, 1) 50%,
-    rgba(32, 37, 50, 1) 75%,
-    rgba(30, 35, 48, 1) 100%
+    135deg,
+    rgba(30, 35, 48, 0.1) 0%,
+    rgba(30, 35, 48, 0.05) 100%
   );
+  backdrop-filter: blur(10px);
 }
