@@ -8,7 +8,7 @@ export const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('.relative')) {
+      if (!target.closest('.relative') && isMenuOpen) {
         setIsMenuOpen(false);
       }
     };
@@ -17,7 +17,16 @@ export const Navbar = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    // Check effects when the menu state changes
+    if (isMenuOpen) {
+      console.log("Menu is open");
+    } else {
+      console.log("Menu is closed");
+    }
+  }, [isMenuOpen]);
 
   return (
     <nav className="bg-background h-[72px] w-full flex flex-col items-stretch justify-center px-16 max-md:max-w-full max-md:px-5 border-b">
@@ -39,12 +48,12 @@ export const Navbar = () => {
             <div className="relative group">
               <button
                 className="self-stretch flex flex-col w-[102px] my-auto hover:text-muted-foreground"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => setIsMenuOpen(prev => !prev)}
               >
                 More
               </button>
               <div
-                className={`absolute top-full left-0 bg-background border w-[146px] overflow-hidden p-6 border-border shadow-lg ${isMenuOpen ? "block" : "hidden"} group-hover:block`}
+                className={`absolute top-full left-0 bg-background border w-[146px] overflow-hidden p-6 border-border shadow-lg ${isMenuOpen ? "block" : "hidden"}`}
               >
                 <Link to="/contact" className="block mb-4 hover:text-muted-foreground">
                   Contact Us
@@ -63,8 +72,8 @@ export const Navbar = () => {
         <Link to="/" className="self-stretch flex w-[84px] my-auto">
           <img
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/aa9318598388678e3fab76ae25e2862e0b56ad73ade67345c49e4f7ef264fd6d"
-            className="aspect-[2.33] object-contain w-[84px] dark:invert"
+            src="Logos/Gemini_Generated_Image_7wwdgj7wwdgj7wwd.jpeg"
+            className="aspect-[0.13] object-contain w-[116px] dark:invert"
             alt="Hospital Logo"
           />
         </Link>

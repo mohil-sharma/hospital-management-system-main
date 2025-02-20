@@ -42,21 +42,21 @@ const TeamMember = ({ image, name, role, description, socialLinks }) => (
 export const Team = () => {
   const teamMembers = [
     {
-      name: "Dr. Emily Carter",
-      title: "Chief Medical Officer",
+      name: "Mohil Sharma",
+      title: "Frontend Developer & UI/UX Designer",
       description:
-        "Dr. Carter is a seasoned healthcare executive with over 20 years of experience in clinical practice and hospital administration.",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400&h=400",
+        "An ambitious B.Tech IT student at VIT Vellore, driven by a passion for coding, fitness, and personal growth.",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQGuOH2gSsWxlA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728311478033?e=1745452800&v=beta&t=aygXe1pD8ZVNWJLTUlwolsujjjQG-_tgRACAoNUL_1Q",
       socialLinks: [
         {
-          platform: "LinkedIn",
-          icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/881a0b3bfd9f71e10093da8316b323be7980157eb82b76306c30498a5e5935c5",
-          url: "#",
+          platform: "GitHub",
+          icon: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+          url: "https://github.com/mohil-sharma",
         },
         {
-          platform: "Twitter",
+          platform: "LinkedIn",
           icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/9cadd24ee858eeeab1464fe141a076131415d444e83f3cee0a761a3d1983801a",
-          url: "#",
+          url: "https://www.linkedin.com/in/mohil-sharma-b73706289/?redirect=true",
         },
       ],
     },
@@ -108,7 +108,7 @@ export const Team = () => {
             Our Team
           </h2>
           <p className="text-lg font-normal mt-6 max-md:max-w-full">
-            Meet our dedicated team of healthcare professionals.
+            Meet our dedicated team of Software professionals.
           </p>
         </div>
 

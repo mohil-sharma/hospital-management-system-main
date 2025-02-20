@@ -30,14 +30,10 @@ const TestimonialCard = ({ rating, quote, avatar, name, title, company }) => (
           {name}
         </div>
         <div className="font-normal">{title}</div>
+        <div className="font-normal">{company}</div> {/* Added company display */}
       </div>
       <div className="border self-stretch w-0 shrink-0 h-[61px] my-auto border-gray-200 border-solid" />
-      <img
-        loading="lazy"
-        src={company}
-        className="aspect-[2.5] object-contain w-[120px] self-stretch shrink-0 my-auto opacity-80"
-        alt="Company Logo"
-      />
+      
     </div>
   </div>
 );
@@ -45,24 +41,22 @@ const TestimonialCard = ({ rating, quote, avatar, name, title, company }) => (
 export const Testimonials = () => {
   const testimonials = [
     {
-      rating: 4,
+      rating: 3,
       quote: "The care I received was exceptional and life-changing.",
       avatar:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/0df769b8fb553ad7114a5389beeaf1cd3b26f19398cdc0cefc0d68fcffb12a9c",
-      name: "Jane Doe",
+      name: "Michael Chaudhary",
       title: "Patient, Local Resident",
-      company:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/fe6d58f7cd9a453b9b96e108cb6a14e29b56a0ee0736f38047d47b82c679b942",
+      company: "Local Hospital" // Added company field
     },
     {
       rating: 5,
       quote: "I felt supported every step of the way during my treatment.",
       avatar:
         "https://cdn.builder.io/api/v1/image/assets/TEMP/0df769b8fb553ad7114a5389beeaf1cd3b26f19398cdc0cefc0d68fcffb12a9c",
-      name: "John Smith",
+      name: "John Yadav",
       title: "Patient, Business Owner",
-      company:
-        "https://cdn.builder.io/api/v1/image/assets/TEMP/fe6d58f7cd9a453b9b96e108cb6a14e29b56a0ee0736f38047d47b82c679b942",
+      company: "Business Corp" // Added company field
     },
   ];
 

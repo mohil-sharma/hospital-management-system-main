@@ -66,7 +66,7 @@ export const Hero = () => {
             <img
               loading="lazy"
               src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&q=80&w=2000"
-              className="aspect-[1.78] object-cover w-full mt-20 max-md:max-w-full max-md:mt-10  shadow-2xl rounded-2xl"
+              className="aspect-[1.78] object-cover w-full mt-20 max-md:max-w-full max-md:mt-10 shadow-2xl rounded-2xl"
               alt="Modern Hospital Facility"
             />
           </div>
